@@ -21,12 +21,20 @@ const SplashPageBody = styled(Typography)(() => ({
   color: properties.style.primary.grey,
 }));
 
+const FullHeightGrid = styled(Grid)(() => ({
+  height: "100%",
+}));
 
 function Services() {
   return (
     <div id="servicesAnchor">
       <ServicesTitle sx={{ pt: 10 }}>Why Steampunk?</ServicesTitle>
-      <Grid container spacing={0}>
+      <FullHeightGrid
+        container
+        justify="flex-end"
+        alignItems="center"
+        spacing={0}
+      >
         <Grid xs={5} sx={{ pt: 20, ml: "70px" }}>
           <SplashPageBody variant="p">
             Steampunk provides the hardware, educators and infrastructure
@@ -53,7 +61,7 @@ function Services() {
             alt="Service page"
           />
         </Grid>
-      </Grid>
+      </FullHeightGrid>
     </div>
   );
 }

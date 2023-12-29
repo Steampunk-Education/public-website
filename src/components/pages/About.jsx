@@ -20,36 +20,44 @@ const SplashPageBody = styled(Typography)(() => ({
   color: properties.style.primary.grey,
 }));
 
+const FullHeightGrid = styled(Grid)(() => ({
+  height: "100%",
+}));
+
 function About() {
   return (
     <div id="aboutAnchor">
-      <AboutTitle sx={{ pt: 18 }}>What is Steampunk?</AboutTitle>
-      <Grid container spacing={0}>
-        <Grid xs={4.8}>
+      <AboutTitle sx={{ pt: 18, pb: 5 }}>What is Steampunk?</AboutTitle>
+      <FullHeightGrid
+        container
+        justify="flex-end"
+        alignItems="center"
+        spacing={0}
+      >
+        <Grid xs={5}>
           <img
             style={{ width: "100%" }}
             src={aboutUsImage}
             alt="Girl looking at user; artistic equations decorate the frame"
           />
         </Grid>
-        <Grid xs={7.2} sx={{ pt: 15, pr: 10 }}>
+        <Grid xs={7} sx={{ pr: 10 }}>
           <SplashPageBody>
-            Steampunk teaches the next generation of Makers how to see
-            technology as a medium for creation.
+            Steampunk's goal is to show young creatives how to harness the
+            incredible power of technology to enable them to create, instead of
+            consume.
           </SplashPageBody>
           <br />
           <SplashPageBody>
-            The British futurist, Arthur C. Clarke said that "any sufficiently
-            advanced technology is indistinguishable from magic". Steampunk's
-            goal is to show the young creatives how to harness the incredible
-            power of technology to enable them to create, instead of consume.
+            We teach students how to get started in robotics, programming, 3D design & AI. 
+            At Steampunk, we believe that an understanding of computer science and basic engineering principles are as vital as reading and arithmetic in this modern age. 
           </SplashPageBody>
           <Container sx={{ pb: "30px" }}></Container>
           <Link to="/quiz?usertype=educator&lang=en">
             <ThemedButton btnText={"Educators, start here"} />
           </Link>
         </Grid>
-      </Grid>
+      </FullHeightGrid>
     </div>
   );
 }
