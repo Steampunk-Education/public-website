@@ -23,6 +23,10 @@ const SplashPageBody = styled(Typography)(() => ({
   color: properties.style.primary.grey,
 }));
 
+const FullHeightGrid = styled(Grid)(() => ({
+  height: "100%"
+}))
+
 const Home = () => {
   return (
     <div>
@@ -33,7 +37,12 @@ const Home = () => {
         workshopTitle="Find workshops near you..."
         lang="en"
       />
-      <Grid container>
+      <FullHeightGrid
+       container
+       justify="flex-end"
+       alignItems="center"
+       spacing={2}
+      >
         <Grid xs={6}>
           <img
             style={{ paddingTop: "50px", width: "100%" }}
@@ -42,11 +51,11 @@ const Home = () => {
           />
         </Grid>
         <Grid xs={6}>
-          <SplashPageTitle sx={{ pt: 23 }}>
+          <SplashPageTitle sx={{ pr: 5 }}>
             Unlock the potential of future <strong>scientists</strong> and{" "}
             <strong>engineers</strong>
           </SplashPageTitle>
-          <SplashPageBody sx={{ pt: 2, pb: 3 }}>
+          <SplashPageBody sx={{ pt: 2, pb: 3, pr: 5 }}>
             Revolutionize your education centre with educational resources and
             passionate instructors who specialize in teaching STEM.
           </SplashPageBody>
@@ -60,7 +69,7 @@ const Home = () => {
             <ThemedButton btnText={"Parents"} />
           </Link>
         </Grid>
-      </Grid>
+      </FullHeightGrid>
       <About />
       <Services />
       <WorkshopSearchCity />
