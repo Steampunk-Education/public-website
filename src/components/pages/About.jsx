@@ -1,10 +1,10 @@
 import React, { forwardRef } from "react";
 import "../../style/fonts/roboto.css";
 import { styled } from "@mui/material/styles";
-import { Grid, ListItem, Typography, Container } from "@mui/material";
+import { Grid, Typography, Container } from "@mui/material";
 import ThemedButton from "../ThemedButton";
 import { properties } from "../../properties";
-import aboutUsImage from "../../resources/images/about-us-img.jpeg";
+import aboutUsImage from "../../resources/images/service3-img.jpeg";
 import { Link } from "react-router-dom";
 
 const AboutTitle = styled(Typography)(() => ({
@@ -15,31 +15,35 @@ const AboutTitle = styled(Typography)(() => ({
   color: properties.style.primary.grey,
 }));
 
-const StyledListItem = styled(ListItem)(() => ({
-  fontFamily: "Roboto",
+const SplashPageBody = styled(Typography)(() => ({
   fontSize: "18px",
-}))
+  color: properties.style.primary.grey,
+}));
 
 function About() {
   return (
     <div id="aboutAnchor">
-      <AboutTitle sx={{ pt: 18 }}>How can we help?</AboutTitle>
+      <AboutTitle sx={{ pt: 18 }}>What is Steampunk?</AboutTitle>
       <Grid container spacing={0}>
-        <Grid xs={5}>
-          <img style={{ width: "100%" }} src={aboutUsImage} alt="Girl looking at user; artistic equations decorate the frame" />
+        <Grid xs={4.8}>
+          <img
+            style={{ width: "100%" }}
+            src={aboutUsImage}
+            alt="Girl looking at user; artistic equations decorate the frame"
+          />
         </Grid>
-        <Grid xs={7} sx={{ pt: 15 }}>
-          <StyledListItem sx={{ display: "list-item" }}>
-            Steampunk creates programs that teach the basics of STEM
-          </StyledListItem>
-          <StyledListItem sx={{ display: "list-item" }}>
-            Each program is created to fit the specific needs of your education
-            centre
-          </StyledListItem>
-          <StyledListItem sx={{ display: "list-item" }}>
-            Steampunk has partnered with schools, libraries & community centres
-            across Ontario & Québec
-          </StyledListItem>
+        <Grid xs={7.2} sx={{ pt: 15, pr: 10 }}>
+          <SplashPageBody>
+            Steampunk teaches the next generation of Makers how to see
+            technology as a medium for creation.
+          </SplashPageBody>
+          <br />
+          <SplashPageBody>
+            The British futurist, Arthur C. Clarke said that "any sufficiently
+            advanced technology is indistinguishable from magic". Steampunk's
+            goal is to show the young creatives how to harness the incredible
+            power of technology to enable them to create, instead of consume.
+          </SplashPageBody>
           <Container sx={{ pb: "30px" }}></Container>
           <Link to="/quiz?usertype=educator&lang=en">
             <ThemedButton btnText={"Educators, start here"} />
