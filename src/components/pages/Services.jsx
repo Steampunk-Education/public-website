@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Grid } from "@mui/material";
 import servicesImage from "../../resources/images/services-page-img.jpeg";
@@ -31,7 +31,8 @@ function Services() {
           </Grid>
         </FullHeightGrid>
       </Box>
-      <Box sx={{ display: { xs: "block", md: "none" } }}>
+      <Box sx={{ display: { xs: "block", md: "none" }, pt: 10, pl: 5, pr: 5 }}>
+        <Divider />
         <ServiceText />
       </Box>
     </div>

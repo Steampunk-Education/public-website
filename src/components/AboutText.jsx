@@ -21,7 +21,7 @@ const SplashPageBody = styled(Typography)(() => ({
 function AboutText() {
   return (
     <div>
-      <AboutTitle sx={{ pb: 5 }}>What is Steampunk?</AboutTitle>
+      <AboutTitle sx={{ pt: 5, pb: 5 }}>What is Steampunk?</AboutTitle>
       <SplashPageBody>
         Steampunk's goal is to show young creatives how to harness the
         incredible power of technology to enable them to create, instead of

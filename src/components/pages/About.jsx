@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import "../../style/fonts/roboto.css";
 import { styled } from "@mui/material/styles";
-import { Grid } from "@mui/material";
+import { Divider, Grid } from "@mui/material";
 import aboutUsImage from "../../resources/images/service3-img.jpeg";
 import AboutText from "../AboutText";
 import Box from "@mui/material/Box";
@@ -33,6 +33,7 @@ function About() {
         </FullHeightGrid>
       </Box>
       <Box sx={{ display: { xs: "block", md: "none" }, pt: 10, pl: 5, pr: 5  }}>
+        <Divider />
         <AboutText />
       </Box>
     </div>
