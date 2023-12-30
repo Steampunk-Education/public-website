@@ -41,8 +41,6 @@ function ContactForm(props) {
     setEmailError(false);
     setMessageError(false);
 
-    console.log(e)
-
     if (email.length > 0) {
       if (email.includes("@")) {
         const splitEmail = email.split("@");
@@ -52,7 +50,7 @@ function ContactForm(props) {
               return;
             } else {
               setConfirmation(true);
-              emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
+              emailjs.sendForm('service_fmet24d', 'template_41r7dle', form.current, 'deyfRTCUhnirwdMbr')
                 .then(() => {
                 }, (error) => {
                   console.log(error)
@@ -83,23 +81,25 @@ function ContactForm(props) {
           </SplashPageBody>
         </div>
       ) : (
-        <form ref={form}>
-          <SplashPageTitle sx={{ pt: 4, pb: 2, ml: 3 }}>
+        <form ref={form} style={{ paddingLeft: 40 }}>
+          <SplashPageTitle sx={{ pt: 4, pb: 2 }}>
             {titleText}
           </SplashPageTitle>
           <Grid sx={{ pb: 3 }} container>
             <TextField
-              sx={{ ml: 3, width: 400 }}
+              sx={{ width: 400 }}
               label="Enter your work email..."
               variant="outlined"
               onChange={handleEmailChange}
               error={emailError}
               helperText={emailError ? "Please enter a valid email." : ""}
+              name="from_email"
+              type="email"
             />
           </Grid>
           <Grid sx={{ pb: 3 }}>
             <TextField
-              sx={{ ml: 3, width: 600 }}
+              sx={{ width: 600 }}
               label="Questions or comments?"
               variant="outlined"
               multiline
@@ -107,10 +107,10 @@ function ContactForm(props) {
               onChange={handleMessageChange}
               error={messageError}
               helperText={messageError ? "Please enter your message." : ""}
+              name="message"
             />
           </Grid>
           <ThemedButton
-            sx={{ ml: 3 }}
             btnText={submitBtnText}
             onClick={(e) => handleClick(e)}
           />
