@@ -22,7 +22,7 @@ const ServicesTitle = styled(Typography)(() => ({
 function ServiceText() {
   return (
     <div>
-      <ServicesTitle sx={{ pb: 5 }}>Why Steampunk?</ServicesTitle>
+      <ServicesTitle sx={{ pt: 5, pb: 5 }}>Why Steampunk?</ServicesTitle>
 
       <SplashPageBody variant="p">
         Steampunk provides the hardware, educators and infrastructure required

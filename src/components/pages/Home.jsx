@@ -9,6 +9,7 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import spashPageImage from "../../resources/images/splash-page-img.jpeg";
 import HomeText from "../HomeText";
+import Footer from "../Footer";
 
 const FullHeightGrid = styled(Grid)(() => ({
   height: "100%",
@@ -49,6 +50,7 @@ const Home = () => {
       <About />
       <Services />
       <WorkshopSearchCity />
+      <Footer />
     </div>
   );
 };

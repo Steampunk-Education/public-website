@@ -1,24 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import "../style/fonts/josefin-sans.css";
 import logo from "../resources/images/steampunk-logo.png";
+import icon from "../resources/images/steampunk-icon.png";
 import { styled } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import {
-  Button,
-  Dialog,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-  DialogActions,
-  Typography,
-} from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { Search } from "@mui/icons-material";
-import WorkshopSearchCity from "./WorkshopSearch";
 import { properties } from "../properties";
+import Box from "@mui/material/Box";
 
 const StyledAppBar = styled(AppBar)(() => ({
   borderBottom: "2px solid #E2E2E2",
@@ -33,7 +24,6 @@ const Logo = styled("img")(() => ({
 }));
 
 const MenuItem = styled(Typography)(() => ({
-  paddingRight: "40px",
   fontFamily: "Josefin Sans",
   fontSize: "20px",
   color: properties.style.primary.grey,
@@ -42,85 +32,88 @@ const MenuItem = styled(Typography)(() => ({
   },
 }));
 
-function Navbar(props) {
-  const { aboutTitle, servicesTitle, contactTitle, workshopTitle, lang } =
-    props;
-
-  const [open, setOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState("");
-
-  const handleSearchOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleSearchClose = (value) => {
-    setOpen(false);
-    setSelectedValue(value);
-  };
-
+function Navbar() {
   const navigate = useNavigate();
   const navContact = () => navigate("/contact");
   const navHome = () => navigate("/");
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <StyledAppBar position="static" color="transparent" elevation={0}>
-        <Toolbar>
-          <Button
-            startIcon={<Search />}
-            variant="outlined"
-            onClick={handleSearchOpen}
-            sx={{
-              fontFamily: "Josefin Sans",
-              fontSize: "16px",
-              color: properties.style.primary.grey,
-              border: properties.style.primary.grey,
-              "&:hover": {
-                border: properties.style.primary.grey,
-              },
-            }}
+    <StyledAppBar position="static" color="transparent" elevation={0}>
+      <Toolbar>
+        <Box sx={{ display: { xs: "none", md: "block" } }}>
+          <Grid
+            container
+            justify="flex-end"
+            alignItems="center"
+            spacing={2}
+            sx={{ pt: 2 }}
           >
-            {workshopTitle}
-          </Button>
-          <WorkshopSearchCity
-            selectedValue={selectedValue}
-            open={open && !(lang === "pr")}
-            onClose={handleSearchClose}
-          />
-          <Dialog open={open && lang === "pr"}>
-            <DialogTitle>Nenhuma oficina foi encontrada</DialogTitle>
-            <DialogContent>
-              <DialogContentText>
-                Estamos trabalhando duro para estabelecer mais oficinas em sua
-                área, entre em contato conosco para mais informações.
-              </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={handleClose} autoFocus>
-                OK
-              </Button>
-            </DialogActions>
-          </Dialog>
-          <Logo
-            src={logo}
-            sx={{ ":hover": { cursor: "pointer" } }}
-            onClick={navHome}
-            alt="Steampunk Education Logo"
-          />
-          <HashLink to="/#aboutAnchor" style={{ textDecoration: "none" }}>
-            <MenuItem>{aboutTitle}</MenuItem>
-          </HashLink>
-          <HashLink to="/#servicesAnchor" style={{ textDecoration: "none" }}>
-            <MenuItem>{servicesTitle}</MenuItem>
-          </HashLink>
-          <MenuItem onClick={navContact}>{contactTitle}</MenuItem>
-        </Toolbar>
-      </StyledAppBar>
-    </Box>
+            <Grid xs={8} lg={11}>
+              <Logo
+                src={logo}
+                sx={{
+                  ":hover": { cursor: "pointer" },
+                  minWidth: "250px",
+                  maxWidth: "800px",
+                  pl: 2,
+                }}
+                onClick={navHome}
+                alt="Steampunk Education Logo"
+              />
+            </Grid>
+            <Grid xs={4} lg={1} sx={{ display: "flex", flexDirection: "row" }}>
+              <HashLink to="/#aboutAnchor" style={{ textDecoration: "none" }}>
+                <MenuItem sx={{ pr: 3 }}>About</MenuItem>
+              </HashLink>
+              <HashLink
+                to="/#servicesAnchor"
+                style={{ textDecoration: "none" }}
+              >
+                <MenuItem sx={{ pr: 3 }}>Services</MenuItem>
+              </HashLink>
+              <MenuItem onClick={navContact}>Contact</MenuItem>
+            </Grid>
+          </Grid>
+        </Box>
+        <Box sx={{ display: { xs: "block", md: "none" } }}>
+          <Grid
+            container
+            justify="flex-end"
+            alignItems="center"
+            spacing={2}
+            sx={{ pt: 2 }}
+          >
+            <Grid xs={6}>
+              <Logo
+                src={icon}
+                sx={{
+                  ":hover": { cursor: "pointer" },
+                  maxWidth: "200px",
+                  pl: 2,
+                }}
+                onClick={navHome}
+                alt="Steampunk Education Logo"
+              />
+            </Grid>
+            <Grid
+              xs={6}
+              sx={{ display: "flex", flexDirection: "row", textAlign: "right" }}
+            >
+              <HashLink to="/#aboutAnchor" style={{ textDecoration: "none" }}>
+                <MenuItem sx={{ pr: 3 }}>About</MenuItem>
+              </HashLink>
+              <HashLink
+                to="/#servicesAnchor"
+                style={{ textDecoration: "none" }}
+              >
+                <MenuItem sx={{ pr: 3 }}>Services</MenuItem>
+              </HashLink>
+              <MenuItem onClick={navContact}>Contact</MenuItem>
+            </Grid>
+          </Grid>
+        </Box>
+      </Toolbar>
+    </StyledAppBar>
   );
 }
 
