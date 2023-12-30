@@ -21,7 +21,7 @@ const SplashPageBody = styled(Typography)(() => ({
 function AboutText() {
   return (
     <div>
-      <AboutTitle sx={{ pt: 18, pb: 5 }}>What is Steampunk?</AboutTitle>
+      <AboutTitle sx={{ pb: 5 }}>What is Steampunk?</AboutTitle>
       <SplashPageBody>
         Steampunk's goal is to show young creatives how to harness the
         incredible power of technology to enable them to create, instead of
@@ -30,9 +30,8 @@ function AboutText() {
       <br />
       <SplashPageBody>
         We teach students how to get started in robotics, programming, 3D design
-        & AI. At Steampunk, we believe that an understanding of computer science
-        and basic engineering principles are as vital as reading and arithmetic
-        in this modern age.
+        & AI. An understanding of computer science and engineering is as vital
+        as reading, writing and arithmetic in this modern age.
       </SplashPageBody>
       <Container sx={{ pb: "30px" }}></Container>
       <Link to="/quiz?usertype=educator&lang=en">

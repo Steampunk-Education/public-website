@@ -1,26 +1,10 @@
 import React, { forwardRef } from "react";
 import "../../style/fonts/roboto.css";
 import { styled } from "@mui/material/styles";
-import { Grid, Typography, Container } from "@mui/material";
-import ThemedButton from "../ThemedButton";
-import { properties } from "../../properties";
+import { Grid } from "@mui/material";
 import aboutUsImage from "../../resources/images/service3-img.jpeg";
-import { Link } from "react-router-dom";
 import AboutText from "../AboutText";
 import Box from "@mui/material/Box";
-
-const AboutTitle = styled(Typography)(() => ({
-  margin: "auto",
-  textAlign: "center",
-  fontFamily: "Josefin Sans",
-  fontSize: "30px",
-  color: properties.style.primary.grey,
-}));
-
-const SplashPageBody = styled(Typography)(() => ({
-  fontSize: "18px",
-  color: properties.style.primary.grey,
-}));
 
 const FullHeightGrid = styled(Grid)(() => ({
   height: "100%",
@@ -29,7 +13,7 @@ const FullHeightGrid = styled(Grid)(() => ({
 function About() {
   return (
     <div id="aboutAnchor">
-      <Box sx={{ display: { xs: "none", md: "block" } }}>
+      <Box sx={{ display: { xs: "none", md: "block" }, pt: 10 }}>
         <FullHeightGrid
           container
           justify="flex-end"
