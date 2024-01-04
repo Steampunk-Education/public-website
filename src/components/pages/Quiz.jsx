@@ -1,5 +1,4 @@
-import LanguageIcon from "@mui/icons-material/Language";
-import { Alert, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -109,7 +108,6 @@ function Quiz() {
   let query = useQuery();
   const userType = query.get("usertype");
   const lang = query.get("lang");
-  const otherLang = lang === "en" ? "pr" : "en";
 
   return (
     <div>
@@ -137,17 +135,6 @@ function Quiz() {
           btnText={pageContent["startQuiz"][lang]}
         />
       </Link>
-      <Alert
-        aria-description="Alert to translate page"
-        icon={<LanguageIcon fontSize="inherit" />}
-        sx={{ position: "absolute", right: "25px", bottom: "25px" }}
-        severity="info"
-      >
-        {pageContent["translateAlertText"][lang]}
-        <Link to={"/quiz?lang=" + otherLang + "&usertype=" + userType}>
-          {pageContent["translateLink"][lang]}
-        </Link>
-      </Alert>
     </div>
   );
 }
