@@ -37,23 +37,14 @@ function HomeText() {
         passionate instructors who specialize in teaching STEM.
       </SplashPageBody>
       <SpacedButtonGroup>
-        {/* <Link to="/quiz?usertype=educator&lang=en">
-          <ThemedButton btnText={"Educators"} />
-        </Link> */}
-        <Link to="https://docs.google.com/forms/d/e/1FAIpQLScml7SzHtdp2vvnIQfzHDDOdvMuETmtnSzYXDlGvHFBkI3CZg/viewform?usp=sf_link" target="_blank">
+        <Link to="/quiz?usertype=educator&lang=en">
           <ThemedButton btnText={"Educators"} />
         </Link>
-        {/* <Link to="/quiz?usertype=student&lang=en">
+        <Link to="/quiz?usertype=student&lang=en">
           <ThemedButton btnText={"Students"} />
-        </Link> */}
-        <Link to="https://docs.google.com/forms/d/e/1FAIpQLSf6FuYcmdVJY4aLyOh1VQLZCXg9AMp3Jc8G3Nh88EhGLgvWsg/viewform?usp=sf_link" target="_blank">
-          <ThemedButton btnText={"Parents"} />
         </Link>
-        {/* <Link to="/quiz?usertype=parent&lang=en">
+        <Link to="/quiz?usertype=parent&lang=en">
           <ThemedButton btnText={"Parents"} />
-        </Link> */}
-        <Link to="https://docs.google.com/forms/d/e/1FAIpQLSd7BQiKb9r-uOOwqAs9KSTrjL-lb4DEjztj4HRv3H2ZH2OZBQ/viewform?usp=sf_link" target="_blank">
-          <ThemedButton btnText={"Students"} />
         </Link>
       </SpacedButtonGroup>
     </div>
