@@ -44,6 +44,7 @@ const pageContent = {
     },
   },
   educator: {
+    formLink: "https://docs.google.com/forms/d/e/1FAIpQLScml7SzHtdp2vvnIQfzHDDOdvMuETmtnSzYXDlGvHFBkI3CZg/viewform?usp=sf_link",
     pageTitle: {
       en: "How can we help your education centre?",
       pr: "Como podemos ajudar o seu centro educativo?",
@@ -59,6 +60,7 @@ const pageContent = {
     },
   },
   student: {
+    formLink: "https://docs.google.com/forms/d/e/1FAIpQLSd7BQiKb9r-uOOwqAs9KSTrjL-lb4DEjztj4HRv3H2ZH2OZBQ/viewform?usp=sf_link",
     pageTitle: {
       en: "Which workshop is the best fit for you?",
       pr: "Qual oficina é a mais adequada para você?",
@@ -71,6 +73,7 @@ const pageContent = {
     },
   },
   parent: {
+    formLink: "https://docs.google.com/forms/d/e/1FAIpQLSf6FuYcmdVJY4aLyOh1VQLZCXg9AMp3Jc8G3Nh88EhGLgvWsg/viewform?usp=sf_link",
     pageTitle: {
       en: "Which workshop is the best fit for your child?",
       pr: "Qual oficina é a mais adequada para o seu filho?",
@@ -128,7 +131,7 @@ function Quiz() {
         {pageContent["timeToCompleteDesc"][lang]}{" "}
         <strong>{pageContent["timeToComplete"][lang]}</strong>
       </TimeRemaining>
-      <Link to="/quizcontent">
+      <Link to={pageContent[userType]["formLink"]} target="_blank">
         <ThemedButton
           aria-description="Start Quiz Button"
           sx={{ ml: 3 }}
