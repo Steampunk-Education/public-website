@@ -4,7 +4,9 @@
 
 # Purpose
 Steampunk Education is a STEM education company that I co-founded with my brother; after 5 years of running the company, we have taught over 1000 students across Ontario and Québec.
-Steampunk offers hands-on workshops that teach students how to build robots, VR games, and custom AI agents. Steampunk is active partners with [The Peel District School Board](https://www.peelschools.org/), (Glebe Collegiate Institude)[https://glebe.ocdsb.ca/] and [The Mississippi Mills Public Library](https://www.missmillslibrary.com/) among many others. 
+Steampunk offers hands-on workshops that teach students how to build robots, VR games, and custom AI agents. 
+
+Steampunk is active partners with [The Peel District School Board](https://www.peelschools.org/), [Glebe Collegiate Institude](https://glebe.ocdsb.ca/) and [The Mississippi Mills Public Library](https://www.missmillslibrary.com/) among many others. 
 
 # Installation
 Run yarn's installation command in the root directory, after cloning the repo:
